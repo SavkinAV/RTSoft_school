@@ -31,8 +31,8 @@ class s_ptr{
 	control_Blck<T>* cBL = nullptr;	
 
 	void clear() {
-		this->control_Blck->dec();
-		if (this->control_Blck->getUseCnt() == 0) {
+		control_Blck->dec();
+		if (control_Blck->getUseCnt() == 0) {
 			delete control_Blck;
 			delete data;
 		}
@@ -53,7 +53,7 @@ public:
 		clear();
 		data = ptr.data;
 		control_Blck = ptr.control_Blck;
-		this->control_Blck->inc();
+		ptr.control_Blck->inc();
 		return *this;
 	}
 	~s_ptr() {
