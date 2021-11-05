@@ -64,4 +64,4 @@ public:
 	T* operator->() { return data; }
 };
 
-#endif S_PTR_H
+#endif // S_PTR_H
